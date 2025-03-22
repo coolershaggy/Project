@@ -30,7 +30,7 @@ pipeline {
                 bat """
                 mkdir build
                 cd build
-                cmake -DCMAKE_BUILD_TYPE=${BLDTARGET} ..
+                cmake -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=${BLDTARGET} -DENABLE_CD=${params.ENABLE_CD ? 1 : 0} ..
                 """
             }
         }
